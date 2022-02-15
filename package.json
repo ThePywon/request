@@ -1,0 +1,19 @@
+{
+  "name": "@protagonists/https",
+  "version": "1.0.0",
+  "description": "A simple package that handles http requests so you don't have to",
+  "main": "https",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThePywon/https-handler.git"
+  },
+  "author": "Pywon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThePywon/https-handler/issues"
+  },
+  "homepage": "https://github.com/ThePywon/https-handler#readme"
+}
