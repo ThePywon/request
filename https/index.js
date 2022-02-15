@@ -7,7 +7,7 @@ function Get(info, callback) {
   const options = {
     host: info.host,
     port: info.port || 443,
-    path: info.path || "/",
+    path: "/" + info.path || "/",
     method: 'GET'
   }
 
