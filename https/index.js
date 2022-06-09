@@ -1,34 +1,31 @@
 "use strict";
 
 const https = require('https');
+const { GetOptions, PostOptions } = require("./Options");
 
 // Handle get requests
-function Get(info, callback) {
-  const options = {
-    host: info.host,
-    port: info.port || 443,
-    path: "/" + info.path || "/",
-    method: 'GET'
-  }
+async function Get(options) {
+  options = GetOptions(options);
 
-  request(options, callback);
+  if(options === undefined)
+    throw new Error("https: Invalid options for GET request.");
+
+  return await request({...options, method: "GET"});
 }
 
 // Handle post requests
-function Post(info, data, callback) {
-  const options = {
-    host: info.host,
-    port: info.port || 443,
-    path: info.path || "/",
-    method: 'POST',
-    headers: info.header || {}
-  }
+async function Post(options, data) {
+  options = PostOptions(options);
 
-  request(options, callback, JSON.stringify(data));
+  if(options === undefined)
+    throw new Error("https: Invalid options for POST request.");
+
+  return await request({...options, method: "POST"}, JSON.stringify(data));
 }
 
 // Receive request responses and call callback function
-function request(options, callback, data) {
+function request(options, data) {
+return new Promise((resolve, reject) => {
   let result = "";
 
   const req = https.request(options, res => {
@@ -43,38 +40,41 @@ function request(options, callback, data) {
         try {
           // Try to parse response as JSON
           result = JSON.parse(result);
-          callback({
-            url:options.path,
-            content:result,
-            headers:res.headers,
-            status:{
-              code:res.statusCode,
-              message:res.statusMessage
+          resolve({
+            url: options.path,
+            method: data ? "POST" : "GET",
+            content: result,
+            headers: res.headers,
+            status: {
+              code: res.statusCode,
+              message: res.statusMessage
             }
-        });
+          })
         }
         // Try to send response as is
-        catch(e){callback({
-          url:options.path,
-          content:result,
-          headers:res.headers,
-          status:{
-            code:res.statusCode,
-            message:res.statusMessage
+        catch(e){resolve({
+          url: options.path,
+          method: data ? "POST" : "GET",
+          content: result,
+          headers: res.headers,
+          status: {
+            code: res.statusCode,
+            message: res.statusMessage
           }
         })}
       }
       // Send error if nothing was successfull
-      catch(err) {callback({err});return}
+      catch(err) {callback({err});reject({err})}
     });
   });
 
   // Send error on resquest error
-  req.on('error', err => {callback({err})});
+  req.on('error', err => {callback({err});reject({err})});
 
   // Write data if any
   data ? req.write(data) : null;
   // Send the request
   req.end();
+});
 }
 module.exports = { Get, Post };
