@@ -41,7 +41,7 @@ return new Promise((resolve, reject) => {
           // Try to parse response as JSON
           result = JSON.parse(result);
           resolve({
-            url: options.path,
+            path: options.path,
             method: data ? "POST" : "GET",
             content: result,
             headers: res.headers,
@@ -53,7 +53,7 @@ return new Promise((resolve, reject) => {
         }
         // Try to send response as is
         catch(e){resolve({
-          url: options.path,
+          path: options.path,
           method: data ? "POST" : "GET",
           content: result,
           headers: res.headers,
