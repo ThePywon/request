@@ -21,11 +21,11 @@ A package that handles GET and POST requests
 
 
 
-# GetOptions
+# PostOptions
 
 ## Description
 
-A schema object used to parse/validate properties of the parameter `options` of the [**`Get`**](https://github.com/ThePywon/https-handler/blob/main/documentation/Get.md) function  
+A schema object used to parse/validate properties of the parameter `options` of the [**`Post`**](https://github.com/ThePywon/https-handler/blob/main/documentation/Post.md) function  
 Learn more about [Schema](https://github.com/ThePywon/coerce/blob/main/documentation/Schema.md)?
 
 <br/><br/>
@@ -38,11 +38,13 @@ Learn more about [Schema](https://github.com/ThePywon/coerce/blob/main/documenta
 {
   host: String,
   port: SchemaTypes.IntRange(0, Number.MAX_SAFE_INTEGER),
-  path: Path
+  path: Path,
+  headers: Headers
 }
 ```
 
-> `Path` is a custom [SchemaType](https://github.com/ThePywon/coerce/blob/main/documentation/SchemaType.md) which basically parses and converts everthing into a [**String**](https://javascript.info/string), as well as prefixing it with a slash if not already starting with one
+> `Path` is a custom [SchemaType](https://github.com/ThePywon/coerce/blob/main/documentation/SchemaType.md) which basically parses and converts everthing into a [**String**](https://javascript.info/string), as well as prefixing it with a slash if not already starting with one  
+> `Headers` is a custom [SchemaType](https://github.com/ThePywon/coerce/blob/main/documentation/SchemaType.md) which basically parses and converts everthing into an [**Object**](https://javascript.info/object), as well as making sure all properties of the object are strings
 
 <br/><br/>
 
@@ -53,7 +55,8 @@ Learn more about [Schema](https://github.com/ThePywon/coerce/blob/main/documenta
 ```js
 {
   port: 443,
-  path: '/'
+  path: '/',
+  headers: {}
 }
 ```
 
