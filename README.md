@@ -27,18 +27,18 @@ A package that handles GET and POST requests
 
 > The content below does not correspond to the object structure of the objects
 
-* <details open><summary><a href="https://github.com/ThePywon/Documentation-Template/blob/main/documentation/Get.md"><b>Get</b></a> &nbsp; <img src="https://img.shields.io/badge/-Exported-cyan"/></summary>
+* <details open><summary><a href="https://github.com/ThePywon/https-handler/blob/main/documentation/Get.md"><b>Get</b></a> &nbsp; <img src="https://img.shields.io/badge/-Exported-cyan"/></summary>
   <p>
 
-  * [**GetOptions**](https://github.com/ThePywon/Documentation-Template/blob/main/documentation/GetOptions.md)
+  * [**GetOptions**](https://github.com/ThePywon/https-handler/blob/main/documentation/GetOptions.md)
     
   </p>
 </details>
 
-* <details open><summary><a href="https://github.com/ThePywon/Documentation-Template/blob/main/documentation/Post.md"><b>Post</b></a> &nbsp; <img src="https://img.shields.io/badge/-Exported-cyan"/></summary>
+* <details open><summary><a href="https://github.com/ThePywon/https-handler/blob/main/documentation/Post.md"><b>Post</b></a> &nbsp; <img src="https://img.shields.io/badge/-Exported-cyan"/></summary>
   <p>
 
-  * [**PostOptions**](https://github.com/ThePywon/Documentation-Template/blob/main/documentation/PostOptions.md)
+  * [**PostOptions**](https://github.com/ThePywon/https-handler/blob/main/documentation/PostOptions.md)
     
   </p>
 </details>
