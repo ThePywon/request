@@ -1,163 +1,115 @@
-# Https Handler
+<div id="top" align="center">
 
-A simple package that handles https requests so you don't have to!
+<h1><a href="https://github.com/ThePywon/https-handler">https</a></h1>
+ 
+[![npm version](https://img.shields.io/npm/v/@protagonists/https)](https://npmjs.com/package/@protagonists/https)
+[![npm downloads](https://img.shields.io/npm/dt/@protagonists/https)](https://npmjs.com/package/@protagonists/https)
+[![discord server](https://img.shields.io/discord/937758194736955443?logo=discord&logoColor=white)](https://discord.gg/cwhj3EgqGP)
+[![last commit](https://img.shields.io/github/last-commit/ThePywon/https-handler)](https://github.com/ThePywon/https-handler)
+ 
+</div>
+
+
+
+# About
+
+A package that handles GET and POST requests
+
+---
+
+<br/><br/><br/>
+
+
 
 # Table of content
 
-* [How to use?](#how-to-use)
-* [Functions](#functions)
-  * [`Handler.Get`](#handlerget)
-  * [`Handler.Post`](#handlerpost)
-* [Data Objects](#data-objects)
-  * [`Info`](#info)
-  * [`Response`](#response)
+* [**How to use?**](#how-to-use)
+
+> The content below does not correspond to the object structure of the objects
+
+* <details open><summary><a href="https://github.com/ThePywon/Documentation-Template/blob/main/documentation/Get.md"><b>Get</b></a> &nbsp; <img src="https://img.shields.io/badge/-Exported-cyan"/></summary>
+  <p>
+
+  * [**GetOptions**](https://github.com/ThePywon/Documentation-Template/blob/main/documentation/GetOptions.md)
+    
+  </p>
+</details>
+
+* <details open><summary><a href="https://github.com/ThePywon/Documentation-Template/blob/main/documentation/Post.md"><b>Post</b></a> &nbsp; <img src="https://img.shields.io/badge/-Exported-cyan"/></summary>
+  <p>
+
+  * [**PostOptions**](https://github.com/ThePywon/Documentation-Template/blob/main/documentation/PostOptions.md)
+    
+  </p>
+</details>
+
+---
+
+<br/><br/><br/>
+
+
 
 # How to use?
 
-First up, lets install it
+## Description
 
-`npm i @protagonists/https`
+This package makes it easier to use and handle basic http requests
 
-```js
-const Handler = require("@protagonists/https");
-```
+## Import
 
-You can then use it to send `GET` or `POST` requests to apis like so:
+### Terminal
 
-```js
-Handler.Get({
-  host:"MyApi.com",
-  path:"TheEndpointINeed"
-}, res=>{
-  if(res.status.code === 200)
-    console.log(`We just got some data: ${res.content}`);
-});
-```
+> ```sh
+> npm install @protagonists/https
+> ```
 
-You can quickly see why it is so useful
+### Node.js
 
-It is even used in other packages such as [`@protagonists/cry_vs`](https://www.npmjs.com/package/@protagonists/cry_vs) and in the [**`Crypto Versus`**](https://github.com/ProtagonistsWasTaken/crypto_versus) api itself!
+> ```js
+> const { Get, Post } = require("@protagonists/https");
+> ```
 
-# Functions
+---
 
-## Handler.Get
 
-### Description
 
-This function sends a `GET` request to the specified domain endpoint
+<br/>
 
-### Syntax
+## Example
+
+### Code:
 
 ```js
-Handler.Get(info: Any, callback: Any)
+const { Get, Post } = require("@protagonists/https");
+
+Get({
+  host: "csrng.net",
+  path: "csrng/csrng.php?min=0&max=100"
+}).then(console.log);
 ```
 
-*info is expected to follow the [`Info`] object format
+<br/>
 
-### Example
+### Output:
 
-#### Code:
-
-```js
-Handler.Get({
-  host:"SomeDomain",
-  path:"Endpoint", // Defaults to "/"
-  port:443, // Defaults to 443
-}, function myCallback(res) {
-  if(res.status.code === 200) {
-    // Success
-  }
-  else {
-    // Error
-  }
-});
+```
+{
+  path: '/csrng/csrng.php?min=0&max=100',
+  method: 'GET',
+  content: [ { status: 'success', min: 0, max: 100, random: 33 } ],
+  headers: {
+    date: 'Fri, 10 Jun 2022 18:51:27 GMT',
+    server: 'Apache/2.4.37 (Red Hat Enterprise Linux) OpenSSL/1.1.1k',
+    'x-powered-by': 'PHP/7.4.29',
+    connection: 'close',
+    'transfer-encoding': 'chunked',
+    'content-type': 'application/json; charset=utf-8'
+  },
+  status: { code: 200, message: 'OK' }
+}
 ```
 
-*res will be returned in this [`Response`](#response) object format
+<br/><br/><br/><br/><br/>
 
-## Handler.Post
-
-### Description
-
-This function sends a `Post` request to the specified domain endpoint
-
-### Syntax
-
-```js
-Handler.Post(info: Any, data: Any, callback: Any)
-```
-
-*data can be any value, not only objects
-
-*info is expected to follow the [`Info`](#info) object format
-
-### Example
-
-#### Code:
-
-```js
-Handler.Post({
-  host:"SomeDomain",
-  path:"Endpoint", // Defaults to "/"
-  port:443, // Defaults to 443
-}, {
-  name:"my data object"
-}, function myCallback(res) {
-  if(res.status.code === 200) {
-    // Success
-  }
-  else {
-    // Error
-  }
-});
-```
-
-*res will be returned in this [`Response`](#response) object format
-
-# Data Objects
-
-## Info
-
-### Description
-
-This is the expected format whenever you want to make a request
-
-### Properties
-
-`host` *String*  
-Determines the domain the handler will request to
-
-`path?` *String*  
-Determines the endpoint the handler will request to
-
-`port?` *Number*  
-Determines the port the handler will use to send the request
-
-## Response
-
-### Description
-
-This is the format of the passed response object in the callback
-
-### Properties
-
-`url` *String*  
-Holds the requested endpoint
-
-`content` *String*  
-Holds the response's stringified content
-
-`headers` *Object*  
-Holds an object containing all the response's headers as properties
-
-`status.code` *Number*  
-Holds the response's status code  
-for a list of http status codes, check the link right below:  
-[Wikipedia - List of HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
-
-`status.message` *String*  
-Holds the response's status message, corresponding to the status code
-
-# Github
-
-<https://github.com/ThePywon/https-handler>
+<h1 align="center">This is the bottom, there is nothing more.<br/>
+Go <a href="#top">back up?</a></h1>
