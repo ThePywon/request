@@ -1,19 +1,19 @@
 <div id="top" align="center">
 
-<h1><a href="https://github.com/user/repo">Package Name</a><h1>
-
-[![npm version](https://img.shields.io/npm/v/@org/package-name)](https://npmjs.com/package/@org/package-name)
-[![npm downloads](https://img.shields.io/npm/dt/@org/package-name)](https://npmjs.com/package/@org/package-name)
-[![discord server](https://img.shields.io/discord/serverid?logo=discord&logoColor=white)](https://discord.gg/invite)
-[![last commit](https://img.shields.io/github/last-commit/user/repo)](https://github.com/user/repo)
-
+<h1><a href="https://github.com/ThePywon/https-handler">https</a></h1>
+ 
+[![npm version](https://img.shields.io/npm/v/@protagonists/https)](https://npmjs.com/package/@protagonists/https)
+[![npm downloads](https://img.shields.io/npm/dt/@protagonists/https)](https://npmjs.com/package/@protagonists/https)
+[![discord server](https://img.shields.io/discord/937758194736955443?logo=discord&logoColor=white)](https://discord.gg/cwhj3EgqGP)
+[![last commit](https://img.shields.io/github/last-commit/ThePywon/https-handler)](https://github.com/ThePywon/https-handler)
+ 
 </div>
 
 
 
 # About
 
-This package makes it easier to use and handle basic http requests
+A package that handles GET and POST requests
 
 ---
 
@@ -31,7 +31,11 @@ A function that handles any GET request
 
 |**Parameters**|**Types**|
 |-|-|
-|`options`|[**GetOptions**](https://github.com/ThePywon/Documentation-Template/blob/main/documentation/GetOptions.md)|
+|`options`|[**GetOptions**](https://github.com/ThePywon/https-handler/blob/main/documentation/GetOptions.md)|
+
+<br/>
+
+**Returns:** &nbsp; [**Object**](https://javascript.info/object)
 
 <br/>
 
