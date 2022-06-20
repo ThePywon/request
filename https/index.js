@@ -64,12 +64,12 @@ return new Promise((resolve, reject) => {
         })}
       }
       // Send error if nothing was successfull
-      catch(err) {reject({err})}
+      catch(err) {resolve({err})}
     });
   });
 
   // Send error on resquest error
-  req.on('error', err => {reject({err})});
+  req.on('error', err => {resolve({err})});
 
   // Write data if any
   data ? req.write(data) : null;
