@@ -1,6 +1,6 @@
 {
   "name": "@protagonists/https",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple package that handles http requests so you don't have to",
   "main": "https",
   "scripts": {
@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/ThePywon/https-handler#readme",
   "dependencies": {
-    "@protagonists/coerce": "^1.0.6"
+    "@protagonists/coerce": "^1.0.8"
   }
 }
