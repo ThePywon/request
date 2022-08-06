@@ -1,6 +1,6 @@
 const { Schema, SchemaType, SchemaTypes } = require("@protagonists/coerce");
 
-class Path extends SchemaTypes._String_ {
+class Path extends SchemaTypes.StringType {
   constructor() { super() }
 
   call(val) {
