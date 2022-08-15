@@ -15,7 +15,7 @@
 
 A package that handles GET and POST requests
 
-> Now works with version `1.0.8` of `@protagonists/coerce`
+> Now works with version `1.1.2` of `@protagonists/coerce`
 
 ---
 
