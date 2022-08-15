@@ -1,11 +1,11 @@
 <div id="top" align="center">
 
-<h1><a href="https://github.com/ThePywon/https-handler">https</a></h1>
+<h1><a href="https://github.com/ThePywon/request">request</a></h1>
  
-[![npm version](https://img.shields.io/npm/v/@protagonists/https)](https://npmjs.com/package/@protagonists/https)
-[![npm downloads](https://img.shields.io/npm/dt/@protagonists/https)](https://npmjs.com/package/@protagonists/https)
+[![npm version](https://img.shields.io/npm/v/@protagonists/request)](https://npmjs.com/package/@protagonists/request)
+[![npm downloads](https://img.shields.io/npm/dt/@protagonists/request)](https://npmjs.com/package/@protagonists/request)
 [![discord server](https://img.shields.io/discord/937758194736955443?logo=discord&logoColor=white)](https://discord.gg/cwhj3EgqGP)
-[![last commit](https://img.shields.io/github/last-commit/ThePywon/https-handler)](https://github.com/ThePywon/https-handler)
+[![last commit](https://img.shields.io/github/last-commit/ThePywon/request)](https://github.com/ThePywon/request)
  
 </div>
 
@@ -27,19 +27,14 @@ A package that handles GET and POST requests
 
 * [**How to use?**](#how-to-use)
 
-> The content below does not correspond to the object structure of the objects
+> The content may not correspond to the object structure of the objects
 
-* <details open><summary><a href="https://github.com/ThePywon/https-handler/blob/main/documentation/Get.md"><b>Get</b></a> &nbsp; <img src="https://img.shields.io/badge/-Exported-cyan"/></summary>
+* <details open><summary><a href="https://github.com/ThePywon/https-handler/blob/main/documentation/RequestHandler.md"><b>RequestHandler</b></a> &nbsp; <img src="https://img.shields.io/badge/-Exported-cyan"/></summary>
   <p>
 
+  * [**Get**](https://github.com/ThePywon/https-handler/blob/main/documentation/Get.md)
   * [**GetOptions**](https://github.com/ThePywon/https-handler/blob/main/documentation/GetOptions.md)
-    
-  </p>
-</details>
-
-* <details open><summary><a href="https://github.com/ThePywon/https-handler/blob/main/documentation/Post.md"><b>Post</b></a> &nbsp; <img src="https://img.shields.io/badge/-Exported-cyan"/></summary>
-  <p>
-
+  * [**Post**](https://github.com/ThePywon/https-handler/blob/main/documentation/Post.md)
   * [**PostOptions**](https://github.com/ThePywon/https-handler/blob/main/documentation/PostOptions.md)
     
   </p>
@@ -55,20 +50,20 @@ A package that handles GET and POST requests
 
 ## Description
 
-This package makes it easier to use and handle basic http requests
+This package makes it easier to use and handle basic web requests
 
 ## Import
 
 ### Terminal
 
 > ```sh
-> npm install @protagonists/https
+> npm install @protagonists/request
 > ```
 
 ### Node.js
 
 > ```js
-> const { Get, Post } = require("@protagonists/https");
+> const { Get, Post } = require("@protagonists/request")();
 > ```
 
 ---
@@ -82,7 +77,7 @@ This package makes it easier to use and handle basic http requests
 ### Code:
 
 ```js
-const { Get, Post } = require("@protagonists/https");
+const { Get, Post } = require("@protagonists/https")();
 
 Get({
   host: "csrng.net",

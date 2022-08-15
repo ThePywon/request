@@ -1,22 +1,23 @@
 {
-  "name": "@protagonists/https",
-  "version": "1.0.3",
-  "description": "A simple package that handles http requests so you don't have to",
+  "name": "@protagonists/request",
+  "version": "1.0.0",
+  "description": "A simple package that handles web requests so you don't have to",
   "main": "https",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ThePywon/https-handler.git"
+    "url": "git+https://github.com/ThePywon/request.git"
   },
   "author": "Pywon",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ThePywon/https-handler/issues"
+    "url": "https://github.com/ThePywon/request/issues"
   },
-  "homepage": "https://github.com/ThePywon/https-handler#readme",
+  "homepage": "https://github.com/ThePywon/request#readme",
   "dependencies": {
-    "@protagonists/coerce": "^1.0.8"
+    "@protagonists/coerce": "^1.0.8",
+    "@protagonists/coerce-basics": "^1.0.0"
   }
 }
