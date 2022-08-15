@@ -1,11 +1,11 @@
 <div id="top" align="center">
 
-<h1><a href="https://github.com/ThePywon/https-handler">https</a></h1>
+<h1><a href="https://github.com/ThePywon/request">request</a></h1>
  
-[![npm version](https://img.shields.io/npm/v/@protagonists/https)](https://npmjs.com/package/@protagonists/https)
-[![npm downloads](https://img.shields.io/npm/dt/@protagonists/https)](https://npmjs.com/package/@protagonists/https)
+[![npm version](https://img.shields.io/npm/v/@protagonists/request)](https://npmjs.com/package/@protagonists/request)
+[![npm downloads](https://img.shields.io/npm/dt/@protagonists/request)](https://npmjs.com/package/@protagonists/request)
 [![discord server](https://img.shields.io/discord/937758194736955443?logo=discord&logoColor=white)](https://discord.gg/cwhj3EgqGP)
-[![last commit](https://img.shields.io/github/last-commit/ThePywon/https-handler)](https://github.com/ThePywon/https-handler)
+[![last commit](https://img.shields.io/github/last-commit/ThePywon/request)](https://github.com/ThePywon/request)
  
 </div>
 
@@ -44,7 +44,7 @@ A function that handles any GET request
 **Code:**
 
 ```js
-const { Get } = require("@protagonists/https");
+const { Get } = require("@protagonists/request");
 
 Get({
   host: "picsum.photos",
@@ -77,37 +77,6 @@ Get({
     'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'
   },
   status: { code: 302, message: 'Found' }
-}
-```
-
-<br/>
-
-**Code:**
-
-```js
-const { Get } = require("@protagonists/https");
-
-Get({
-  host: "cry-vs.herokuapp.com",
-  path: "api/v0/login"
-}).then(console.log);
-```
-
-**Output:**
-
-```
-{
-  path: '/api/v0/login',
-  method: 'GET',
-  content: "path '/api/v0/login' should always be requested with method 'POST'.",
-  headers: {
-    server: 'Cowboy',
-    connection: 'close',
-    date: 'Fri, 10 Jun 2022 19:10:17 GMT',
-    'content-length': '67',
-    via: '1.1 vegur'
-  },
-  status: { code: 405, message: 'Unexpected method.' }
 }
 ```
 

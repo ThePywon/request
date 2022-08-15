@@ -1,6 +1,7 @@
-const { Schema, SchemaType, SchemaTypes } = require("@protagonists/coerce");
+const { Schema, SchemaType } = require("@protagonists/coerce");
+const { StringType, IntRange } = require("@protagonists/coerce-basics");
 
-class Path extends SchemaTypes.StringType {
+class Path extends StringType {
   constructor() { super() }
 
   call(val) {
@@ -26,8 +27,8 @@ class Headers extends SchemaType {
 }
 
 const GetOptions = new Schema({
-  host: String,
-  port: SchemaTypes.IntRange(0, Number.MAX_SAFE_INTEGER),
+  host: StringType,
+  port: IntRange(0, Number.MAX_SAFE_INTEGER),
   path: Path
 });
 GetOptions.setDefaults({
@@ -36,8 +37,8 @@ GetOptions.setDefaults({
 });
 
 const PostOptions = new Schema({
-  host: String,
-  port: SchemaTypes.IntRange(0, Number.MAX_SAFE_INTEGER),
+  host: StringType,
+  port: IntRange(0, Number.MAX_SAFE_INTEGER),
   path: Path,
   headers: Headers
 });
