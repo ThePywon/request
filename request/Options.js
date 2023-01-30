@@ -26,9 +26,11 @@ class Headers extends SchemaType {
   }
 }
 
+const UnsignedInt = IntRange(0, Number.MAX_SAFE_INTEGER)
+
 const GetOptions = new Schema({
   host: StringType,
-  port: IntRange(0, Number.MAX_SAFE_INTEGER),
+  port: UnsignedInt,
   path: Path
 });
 GetOptions.setDefaults({
@@ -38,7 +40,7 @@ GetOptions.setDefaults({
 
 const PostOptions = new Schema({
   host: StringType,
-  port: IntRange(0, Number.MAX_SAFE_INTEGER),
+  port: UnsignedInt,
   path: Path,
   headers: Headers
 });
